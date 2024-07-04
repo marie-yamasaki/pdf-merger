@@ -2,7 +2,10 @@ import tkinter as tk
 from tkinter import filedialog
 from pypdf import PdfMerger
 import os
-
+'''
+    For å gjøre om til en executable: 
+        - `python -m PyInstaller --onefile -w "u.py"`
+'''
 class PdfMergerWindow:
     def __init__(self, name = "Kombiner pdf-filer!", size = (1280, 720)) -> None:
         self.name = name
