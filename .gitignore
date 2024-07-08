@@ -1,3 +1,4 @@
 build
 dist/med-ui
 med-ui.spec
+*.pdf
