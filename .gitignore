@@ -2,3 +2,5 @@ build
 dist/med-ui
 med-ui.spec
 *.pdf
+!ugyldigfil1.pdf
+!ugyldigfil2.pdf

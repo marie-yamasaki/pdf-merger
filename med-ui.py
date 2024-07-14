@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
-from pypdf import PdfWriter
+from pypdf import PdfWriter, PdfReader
+from pypdf.errors import PdfReadError
 import os
 
 defaultfont = (
@@ -140,6 +141,16 @@ class PdfMergerWindow:
             self.statusText = "Velg minst 2 filer!"
             self.startProsess()
             return 
+        
+        #sjekk om filene er gyldige
+        for file in self.file_paths:
+            try: 
+                    PdfReader(file)
+            except:
+                self.statusText = "En av filene du valgte var ikke en gyldig PDF-fil!"
+                self.startProsess()
+                return
+
         self.statusText = ""
         self.status.configure(text=f"Du har valgt {filepathslenght} filer. Vennligst gi den kombinerte filen et navn: ")
         self.getfilesBtn.configure(font=(defaultfont))
