@@ -204,7 +204,7 @@ class PdfMergerWindow:
         self.beGone()
         self.status.configure(text=f"Du valgte filnavnet `{self.filnavn.replace(".pdf", "")}`. Trykk på knappen under for å bekrefte dette valget og kombinere filene over!")
 
-        self.velgAnnetNavn = Knapp(self.root, text="Trykk her for å velge et annet navn", fontsize=12, command=self.getName2)
+        self.velgAnnetNavn = Knapp(self.root, text="Trykk her for å velge et annet navn", fontsize=12, command=self.getName)
         self.velgAnnetNavn.pack(pady=10)
 
         self.kombinerBtn = Knapp(self.root, text="Trykk her for å kombinere filene over!", command=self.kombiner)
